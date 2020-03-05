@@ -5,7 +5,6 @@
 #include <algorithm>
 #include <fstream>
 #include <queue> 
-#include <ostream>
 using namespace std;
 
 struct node{
@@ -70,7 +69,7 @@ struct binarySearchTree{
         node* temp = cream;
         adjustHeight(temp);
         while(temp != NULL){
-            
+
             rotateIter(temp);
             adjustHeight(temp);
             if(temp->parent == NULL){
@@ -95,7 +94,7 @@ struct binarySearchTree{
                 root = root->left;
             }
         }
-    
+
         if(root->data == value){
             //3 cases
             //leaf case
@@ -117,7 +116,7 @@ struct binarySearchTree{
                 node* temp = root->parent;
                 adjustHeight(temp);
                 while(temp != NULL){
-            
+
                     rotateIter(temp);
                     adjustHeight(temp);
                     if(temp->parent == NULL){
@@ -139,7 +138,7 @@ struct binarySearchTree{
                 node* temp = root->left;
                 adjustHeight(temp);
                 while(temp != NULL){
-            
+
                     rotateIter(temp);
                     adjustHeight(temp);
                     if(temp->parent == NULL){
@@ -160,7 +159,7 @@ struct binarySearchTree{
                 node* temp = root->right;
                 adjustHeight(temp);
                 while(temp != NULL){
-            
+
                     rotateIter(temp);
                     adjustHeight(temp);
                     if(temp->parent == NULL){
@@ -185,7 +184,7 @@ struct binarySearchTree{
                 node* temp = root->parent;
                 adjustHeight(temp);
                 while(temp != NULL){
-            
+
                     rotateIter(temp);
                     adjustHeight(temp);
                     if(temp->parent == NULL){
@@ -349,7 +348,8 @@ binarySearchTree :: binarySearchTree(){
 
 int main(){
     binarySearchTree Poopy;
-    /*int inputArray[7] = {1,2,3,4,5,6,7};
+
+    int inputArray[7] = {1,2,3,4,5,6,7};
     Poopy.fromArray(inputArray,7,Poopy.root);
     //test avl functionality
     cout << "check AVL insert works" << endl;
@@ -413,7 +413,7 @@ int main(){
     //cout << Poopy.root->left->left->height << endl;
     //cout << Poopy.root->left->right->data << endl;
     cout << Poopy.root->right->left->data << endl;
-    */
+
 
     /*
     int inputArray[3] = {1,2,3};
@@ -425,8 +425,8 @@ int main(){
     cout << Poopy.root->left->data << endl;
     cout << Poopy.root->left->height << endl;
     */
-    
-    /*int inputArray[7] = {5,3,7,2,4,6,8};
+    /*
+    int inputArray[7] = {5,3,7,2,4,6,8};
     Poopy.fromArray(inputArray, 7, Poopy.root);
     cout << Poopy.root->height << endl;
     cout << Poopy.root->right->height << endl;
@@ -437,22 +437,5 @@ int main(){
     cout << Poopy.root->right->height << endl;
     cout << Poopy.root->left->height << endl;
     cout << Poopy.root->right->right->height << endl;*/
-    int inputArray[10];
-    ifstream File;
-    File.open("pumpkin.txt");
-
-    int count;
-    File >> count;
-
-    for(int a = 0; a < 10; a++){
-        File >> inputArray[a];
-    }
-    /*for(int a = 0; a < 10; a++){
-        cout << inputArray[a] << endl;;
-    }*/
-    Poopy.fromArray(inputArray, 10, Poopy.root);
-    cout << Poopy.root->data << endl;
-    cout << Poopy.root->right->data << endl;
-    cout << Poopy.root->left->data << endl;
     return 0;
-}
+} 
