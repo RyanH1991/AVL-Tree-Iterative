@@ -447,20 +447,20 @@ int main(){
     cout << Poopy.root->right->height << endl;
     cout << Poopy.root->left->height << endl;
     cout << Poopy.root->right->right->height << endl;*/
-    int inputArray[10];
+    int inputArray[15];
     ifstream File;
     File.open("pumpkin.txt");
 
     int count;
     File >> count;
 
-    for(int a = 0; a < 10; a++){
+    for(int a = 0; a < 15; a++){
         File >> inputArray[a];
     }
     /*for(int a = 0; a < 10; a++){
         cout << inputArray[a] << endl;;
     }*/
-    Poopy.fromArray(inputArray, 10, Poopy.root);
+    Poopy.fromArray(inputArray, 15, Poopy.root);
     //cout << Poopy.root->data << endl;
     //cout << Poopy.root->right->data << endl;
     //cout << Poopy.root->left->data << endl;
